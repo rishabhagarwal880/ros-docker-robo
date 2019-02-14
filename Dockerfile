@@ -42,5 +42,5 @@ RUN /bin/bash -c '. /opt/ros/kinetic/setup.bash'
 
 CMD ["/bin/bash"]
 
-#ADD localConfig /home/warrierr/localConfig
-#ENTRYPOINT "./localConfig" && /bin/bash
+ADD localConfig /home/robomuse/localConfig
+ENTRYPOINT "./localConfig" && /bin/bash

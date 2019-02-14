@@ -11,6 +11,7 @@ sudo docker run -it --rm \
 		--net=host \
 	 	--pid=host \
 		--privileged \
+		--device=/dev/ttyUSB1:/dev/ttyACM0 \
 		-e USER_ID=${USER_ID} \
 		-e USERNAME=${USERNAME} \
 		-v ${XSOCK}:${XSOCK}:rw \

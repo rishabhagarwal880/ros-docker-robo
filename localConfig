@@ -1,0 +1,8 @@
+#!/bin/bash
+
+cat << EOT >> ~/.bashrc
+
+source /opt/ros/kinetic/setup.bash
+EOT
+echo "Almost there...."
+echo "Welcome to RoboMuse Docker"
