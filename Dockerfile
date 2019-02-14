@@ -38,5 +38,9 @@ RUN sudo rosdep init
 
 RUN rosdep update
 
+RUN /bin/bash -c '. /opt/ros/kinetic/setup.bash;
+
+CMD ["/bin/bash"]
+
 #ADD localConfig /home/warrierr/localConfig
 #ENTRYPOINT "./localConfig" && /bin/bash
