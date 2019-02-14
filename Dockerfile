@@ -3,7 +3,7 @@ FROM ubuntu:16.04
 RUN apt update && apt install -y sudo 
 
 RUN useradd -g video --create-home --shell /bin/bash robomuse && \
-		echo "user ALL=(root) NOPASSWD:ALL" > /etc/sudoers.d/robomuse && \
+		echo "robomuse ALL=(root) NOPASSWD:ALL" > /etc/sudoers.d/robomuse && \
 		chmod 0400 /etc/sudoers.d/robomuse
 
 USER robomuse
