@@ -1,7 +1,7 @@
 #!/bin/bash
 
 USER_ID=$(id -u)
-USERNAME=$(id -un)
+USERNAME=$(id -un) 
 XSOCK=/tmp/.X11-unix
 XAUTH=/tmp/.docker.xauth
 IMAGE=rishabh880/ros-docker-robomuse
@@ -20,6 +20,6 @@ sudo docker run -it --rm \
 		-e DISPLAY=$DISPLAY \
 		-v /home/${USERNAME}:/mnt/host_home \
 		--cap-add=ALL \
-		--name ros-kinetic-${USERNAME} \
+		--name ros-docker-${USERNAME} \
 		--expose=9090 \
 		rishabh880/ros-docker-robomuse
