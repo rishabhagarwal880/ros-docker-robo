@@ -17,7 +17,7 @@ sudo docker run -it --rm \
 		-v ${XAUTH}:${XAUTH}:rw \
 		-e XAUTHORITY=${XAUTH} \
 		-e DISPLAY=$DISPLAY \
-		-v /home/${USERNAME}:/mnt/host \
+		-v $(pwd):/home/robomuse \
 		--cap-add=ALL \
 		--name ros-docker-${USERNAME} \
 		--expose=9090 \
