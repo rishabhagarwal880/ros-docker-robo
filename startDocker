@@ -11,14 +11,13 @@ sudo docker run -it --rm \
 		--net=host \
 	 	--pid=host \
 		--privileged \
-		--device=/dev/ttyUSB1:/dev/ttyACM0 \
 		-e USER_ID=${USER_ID} \
 		-e USERNAME=${USERNAME} \
 		-v ${XSOCK}:${XSOCK}:rw \
 		-v ${XAUTH}:${XAUTH}:rw \
 		-e XAUTHORITY=${XAUTH} \
 		-e DISPLAY=$DISPLAY \
-		-v /home/${USERNAME}:/mnt/host_home \
+		-v /home/${USERNAME}:/mnt/host \
 		--cap-add=ALL \
 		--name ros-docker-${USERNAME} \
 		--expose=9090 \
