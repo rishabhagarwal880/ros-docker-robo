@@ -33,15 +33,30 @@ RUN sudo apt update && \
 				    kmod \
 				    iproute 
 
-# install the nvidia driver
+# Setting the rosdep
 RUN sudo rosdep init
-
 RUN rosdep update
 
-#RUN /bin/bash -c '. /opt/ros/kinetic/setup.bash'
+
+#Essential ubuntu repositories
+RUN sudo apt install -y bash-completion \
+			    git-core \
+			    curl
+
+#ROS Packages
+RUN sudo apt update && \
+		sudo apt install -y arduino \
+                		    ros-kinetic-rosserial-arduino \
+                	            ros-kinetic-rosserial \
+				    ros-kinetic-moveit \
+				    
+#Gazebo
+RUN curl -sSL http://get.gazebosim.org | sh
+
+
 
 CMD ["/bin/bash"]
 
+#Adding the script to source ROS
 ADD localConfig /home/robomuse/localConfig 
-
 ENTRYPOINT "./localConfig" && /bin/bash
