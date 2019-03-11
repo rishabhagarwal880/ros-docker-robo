@@ -53,6 +53,24 @@ RUN sudo apt update && \
 #Gazebo
 RUN curl -sSL http://get.gazebosim.org | sh
 
+#RoboMuse Packages
+RUN sudo apt update && \
+                sudo apt install -y python-wstool \
+                                    python-rosdep \
+                                    ninja-build \
+                                    libgoogle-glog-dev \
+                                    lua5.2 \
+                                    liblua5.2-dev
+
+RUN sudo apt update && \
+                sudo apt install -y tar wget autoconf libtool automake g++ make git bzip2 curl unzip zlib1g-dev
+
+RUN sudo apt update && \
+                sudo apt install software-properties-common
+
+RUN sudo apt install -y ros-kinetic-controller-manager \
+                        ros -kinetic-ros-controllers
+
 
 
 CMD ["/bin/bash"]
