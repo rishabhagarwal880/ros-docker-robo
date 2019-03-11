@@ -69,7 +69,7 @@ RUN sudo apt update && \
                 sudo apt install -y software-properties-common
 
 RUN sudo apt install -y ros-kinetic-controller-manager \
-                        ros -kinetic-ros-controllers
+                        ros-kinetic-ros-controllers
 
 
 CMD ["/bin/bash"]
